@@ -4,3 +4,4 @@ function Node() {
 
   return { value, nextNode };
 }
+export { Node };
