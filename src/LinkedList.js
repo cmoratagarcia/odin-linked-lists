@@ -6,10 +6,27 @@ export default function LinkedList() {
   let size = 0;
 
   function append(value) {
-    let node = Node();
-    node.value = value;
-    tail = node;
+    let node = Node(value);
+    if (!head) {
+      head = node;
+      tail = node;
+    } else {
+      tail.nextNode = node;
+      tail = node;
+    }
+    size++;
   }
 
-  return { append };
+  function toString() {
+    let string = "";
+    let displayedNode = head;
+    while (displayedNode) {
+      // So null returns for the last value
+      string += `(${displayedNode.value} ) -> `;
+      displayedNode = displayedNode.nextNode;
+    }
+    return string + "null";
+  }
+
+  return { append, toString };
 }
