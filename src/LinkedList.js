@@ -17,6 +17,17 @@ export default function LinkedList() {
     size++;
   }
 
+  function prepend(value) {
+    let node = Node(value);
+    if (!head) {
+      head = node;
+      tail = node;
+    } else {
+      node.nextNode = head;
+      head = node;
+    }
+    size++;
+  }
   function toString() {
     let string = "";
     let displayedNode = head;
@@ -28,5 +39,5 @@ export default function LinkedList() {
     return string + "null";
   }
 
-  return { append, toString };
+  return { append, prepend, toString };
 }
