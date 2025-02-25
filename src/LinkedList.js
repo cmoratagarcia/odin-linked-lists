@@ -59,6 +59,17 @@ export default function LinkedList() {
       size--;
     }
   }
+  //returns true if the passed in value is in the list and otherwise returns false.
+  function contains(value) {
+    let currentNode = head;
+    while (currentNode) {
+      if (value === currentNode.value) {
+        return true;
+      }
+      currentNode = currentNode.nextNode;
+    }
+    return false;
+  }
 
   //represents your LinkedList objects as strings
   function toString() {
@@ -83,5 +94,15 @@ export default function LinkedList() {
   function getTail() {
     return tail;
   }
-  return { append, prepend, at, pop, toString, getHead, getTail, getSize };
+  return {
+    append,
+    prepend,
+    at,
+    pop,
+    contains,
+    toString,
+    getHead,
+    getTail,
+    getSize,
+  };
 }

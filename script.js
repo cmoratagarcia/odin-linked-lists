@@ -9,5 +9,8 @@ list.prepend("finally");
 list.append("LAST");
 
 console.log(list.toString());
+console.log(list.contains("wow"));
+console.log(list.contains(23));
+console.log(list.contains("LAST"));
 list.pop();
-console.log(list.toString());
+console.log(list.contains("LAST"));
