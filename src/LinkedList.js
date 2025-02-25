@@ -42,6 +42,19 @@ export default function LinkedList() {
     return tail;
   }
 
+  function at(index) {
+    if (index < size) {
+      let currentNode = head;
+      for (let i = 0; i < index; i++) {
+        currentNode = currentNode.nextNode;
+      }
+
+      return currentNode.value;
+    } else {
+      return "Nothing at that index";
+    }
+  }
+
   function toString() {
     let string = "";
     let displayedNode = head;
@@ -53,5 +66,5 @@ export default function LinkedList() {
     return string + "null";
   }
 
-  return { getHead, getTail, getSize, append, prepend, toString };
+  return { append, prepend, getHead, getTail, getSize, at, toString };
 }

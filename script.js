@@ -9,6 +9,6 @@ list.prepend("finally");
 list.append("LAST");
 
 console.log(list.toString());
-console.log(list.getSize());
-console.log(list.getHead());
-console.log(list.getTail());
+console.log(`found: ${list.at(0)}`);
+console.log(`found: ${list.at(3)}`);
+console.log(`found: ${list.at(6)}`);
