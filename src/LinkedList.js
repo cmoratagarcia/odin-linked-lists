@@ -70,6 +70,20 @@ export default function LinkedList() {
     }
     return false;
   }
+  //returns the index of the node containing value, or null if not found.
+  function find(value) {
+    let currentNode = head;
+    let index = 0;
+    while (currentNode) {
+      if (value === currentNode.value) {
+        return index;
+      }
+      currentNode = currentNode.nextNode;
+      index++;
+    }
+
+    return null;
+  }
 
   //represents your LinkedList objects as strings
   function toString() {
@@ -100,6 +114,7 @@ export default function LinkedList() {
     at,
     pop,
     contains,
+    find,
     toString,
     getHead,
     getTail,

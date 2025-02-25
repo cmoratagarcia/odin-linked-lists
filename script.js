@@ -11,6 +11,6 @@ list.append("LAST");
 console.log(list.toString());
 console.log(list.contains("wow"));
 console.log(list.contains(23));
-console.log(list.contains("LAST"));
+console.log(list.find("LAST"));
 list.pop();
-console.log(list.contains("LAST"));
+console.log(list.find("LAST"));
