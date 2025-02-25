@@ -28,6 +28,20 @@ export default function LinkedList() {
     }
     size++;
   }
+
+  // Getter functions to access private variables
+  function getSize() {
+    return size;
+  }
+
+  function getHead() {
+    return head;
+  }
+
+  function getTail() {
+    return tail;
+  }
+
   function toString() {
     let string = "";
     let displayedNode = head;
@@ -39,5 +53,5 @@ export default function LinkedList() {
     return string + "null";
   }
 
-  return { append, prepend, toString };
+  return { getHead, getTail, getSize, append, prepend, toString };
 }

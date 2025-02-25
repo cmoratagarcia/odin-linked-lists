@@ -4,7 +4,11 @@ const list = LinkedList();
 
 list.append(2);
 list.append("wow");
-list.append(666);
-list.append("finally");
+list.prepend(666);
+list.prepend("finally");
+list.append("LAST");
 
 console.log(list.toString());
+console.log(list.getSize());
+console.log(list.getHead());
+console.log(list.getTail());
