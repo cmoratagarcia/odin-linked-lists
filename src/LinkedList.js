@@ -101,7 +101,7 @@ export default function LinkedList() {
     let displayedNode = head;
     while (displayedNode) {
       // So null returns for the last value
-      string += `(${displayedNode.value} ) -> `;
+      string += `(${displayedNode.value}) -> `;
       displayedNode = displayedNode.nextNode;
     }
     return string + "null";
