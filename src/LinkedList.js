@@ -33,17 +33,16 @@ export default function LinkedList() {
 
   //at(index) returns the node at given index
   function at(index) {
-    if (index < size) {
-      let currentNode = head;
-      for (let i = 0; i < index; i++) {
-        currentNode = currentNode.nextNode;
-      }
+    if (index < 0 || index >= size) return null;
 
-      return currentNode.value;
-    } else {
-      return "Nothing at that index";
+    let currentNode = head;
+    for (let i = 0; i < index; i++) {
+      currentNode = currentNode.nextNode;
     }
+
+    return currentNode.value;
   }
+  
   //removes the last element from the list
   function pop() {
     if (!tail) {
