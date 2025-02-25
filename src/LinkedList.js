@@ -42,22 +42,33 @@ export default function LinkedList() {
 
     return currentNode.value;
   }
-  
+
   //removes the last element from the list
   function pop() {
-    if (!tail) {
-      return "List is empty";
-    } else {
-      let currentNode = head;
-      for (let i = 1; i < size - 1; i++) {
-        currentNode = currentNode.nextNode;
-      }
-      currentNode.nextNode = null;
-      tail = currentNode;
+    if (!head) return null; // If list is empty, return null
 
-      size--;
+    if (size === 1) {
+      let removedValue = head.value;
+      head = null;
+      tail = null;
+      size = 0;
+      return removedValue;
     }
+
+    let currentNode = head;
+    while (currentNode.nextNode !== tail) {
+      // Find second-to-last node
+      currentNode = currentNode.nextNode;
+    }
+
+    let removedValue = tail.value;
+    currentNode.nextNode = null;
+    tail = currentNode;
+    size--;
+
+    return removedValue;
   }
+
   //returns true if the passed in value is in the list and otherwise returns false.
   function contains(value) {
     let currentNode = head;
