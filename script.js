@@ -9,6 +9,5 @@ list.prepend("finally");
 list.append("LAST");
 
 console.log(list.toString());
-console.log(`found: ${list.at(0)}`);
-console.log(`found: ${list.at(3)}`);
-console.log(`found: ${list.at(6)}`);
+list.pop();
+console.log(list.toString());
