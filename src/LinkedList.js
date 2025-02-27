@@ -95,6 +95,24 @@ export default function LinkedList() {
     return null;
   }
 
+  //inserts a new node with the provided value at the given index.
+  function insertAt(value, index) {
+    if (index <= 0) {
+      prepend(value);
+    } else if (index >= size) {
+      append(value);
+    } else {
+      let insertedNode = new Node(value);
+      let currentNode = head;
+      for (let i = 0; i < index - 1; i++) {
+        currentNode = currentNode.nextNode;
+      }
+      insertedNode.nextNode = currentNode.nextNode;
+      currentNode.nextNode = insertedNode;
+    }
+    size++;
+  }
+
   //represents your LinkedList objects as strings
   function toString() {
     let string = "";
@@ -125,6 +143,7 @@ export default function LinkedList() {
     pop,
     contains,
     find,
+    insertAt,
     toString,
     getHead,
     getTail,
