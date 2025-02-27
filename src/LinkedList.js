@@ -112,6 +112,32 @@ export default function LinkedList() {
     }
     size++;
   }
+  //removes the node at the given index.
+  function removeAt(index) {
+    if (!head || index < 0 || index >= size) {
+      return "Index out of bounds";
+    }
+
+    if (index === 0) {
+      head = head.nextNode;
+      if (size === 1) tail = null; // If list had only one element, update tail
+      size--;
+      return;
+    }
+
+    if (index === size - 1) {
+      pop();
+      return;
+    }
+
+    let currentNode = head;
+    for (let i = 0; i < index - 1; i++) {
+      currentNode = currentNode.nextNode;
+    }
+
+    currentNode.nextNode = currentNode.nextNode.nextNode;
+    size--;
+  }
 
   //represents your LinkedList objects as strings
   function toString() {
@@ -144,6 +170,7 @@ export default function LinkedList() {
     contains,
     find,
     insertAt,
+    removeAt,
     toString,
     getHead,
     getTail,
